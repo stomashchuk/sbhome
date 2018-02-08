@@ -8,10 +8,10 @@ import org.openqa.selenium.WebDriver;
 import ru.yandex.qatools.allure.annotations.Attachment;
 import ru.yandex.qatools.allure.annotations.Step;
 
-public class MyWatcher extends TestWatcher {
-    WebDriver driver;
+public class OnFailWatcher extends TestWatcher {
+    public WebDriver driver;
 
-    public MyWatcher(WebDriver driver) {
+    public OnFailWatcher(WebDriver driver) {
         this.driver = driver;
     }
 

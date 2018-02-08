@@ -1,14 +1,13 @@
 import hometask.Application;
-import hometask.watcher.MyWatcher;
+import hometask.watcher.OnFailWatcher;
 import org.junit.AfterClass;
 import org.junit.BeforeClass;
 import org.junit.Rule;
-import org.openqa.selenium.By;
 
 public class BaseTest {
 
     @Rule
-    public MyWatcher rule = new MyWatcher(app.getDriver());
+    public OnFailWatcher rule = new OnFailWatcher(app.getDriver());
 
     static final Application app = new Application();
 
