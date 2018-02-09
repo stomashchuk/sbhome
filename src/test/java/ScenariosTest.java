@@ -49,6 +49,5 @@ public class ScenariosTest extends BaseTest {
                 .marketSearch(itemNameExpected);
         String itemNameActual = app.getYaHelper().takeItemTitle();
         assertEquals(itemNameExpected, itemNameActual);
-
     }
 }

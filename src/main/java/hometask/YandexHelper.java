@@ -19,7 +19,7 @@ public class YandexHelper extends BaseHelper {
     private By findButton = By.cssSelector("[type='submit']");
     private By itemTitle = By.cssSelector(".n-product-title__text-container h1[class*=title]");
 
-    YandexHelper(Application app) {
+    YandexHelper(ApplicationManager app) {
         super(app);
     }
 
@@ -105,6 +105,7 @@ public class YandexHelper extends BaseHelper {
         return element(itemTitle).getText();
     }
 
+    @Step("Узнать количество найденных элементов")
     public int takeCountOfElementsFromMarketResult() {
         return elements(elementsInMarketResult).size();
     }

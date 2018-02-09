@@ -1,4 +1,4 @@
-import hometask.Application;
+import hometask.ApplicationManager;
 import hometask.watcher.OnFailWatcher;
 import org.junit.AfterClass;
 import org.junit.BeforeClass;
@@ -9,7 +9,7 @@ public class BaseTest {
     @Rule
     public OnFailWatcher rule = new OnFailWatcher(app.getDriver());
 
-    static final Application app = new Application();
+    static final ApplicationManager app = new ApplicationManager();
 
     @BeforeClass
     public static void setUp() {

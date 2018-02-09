@@ -18,13 +18,13 @@ public class BaseHelper {
     private WebDriverWait wait;
     Logger log;
 
-    BaseHelper(Application app) {
+    BaseHelper(ApplicationManager app) {
         this.driver = app.getDriver();
         wait = new WebDriverWait(app.getDriver(), 20);
         log = Logger.getLogger(BaseHelper.class);
     }
 
-    void goToUrl(String url) {
+    public void goToUrl(String url) {
         log.info("Getting url " + url);
         driver.get(url);
         waitForPageLoaded();
@@ -45,12 +45,12 @@ public class BaseHelper {
 
     WebElement element(By locator) {
         log.info("Getting WebElement from locator " + locator);
-        return driver.findElement(locator);
+        return wait.until(ExpectedConditions.presenceOfElementLocated(locator));
     }
 
     List<WebElement> elements(By locator) {
         log.info("Getting List of WebElements from locator " + locator);
-        return driver.findElements(locator);
+        return wait.until(ExpectedConditions.presenceOfAllElementsLocatedBy(locator));
     }
 
     boolean elementIsPresent(By locator) {

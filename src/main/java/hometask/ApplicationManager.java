@@ -3,7 +3,7 @@ package hometask;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 
-public class Application {
+public class ApplicationManager {
 
     private WebDriver driver;
     private YandexHelper yaHelper;
